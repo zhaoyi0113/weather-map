@@ -8,16 +8,10 @@ body {
 
 .root {
   width: 100%;
-  height: 100vh;
-
-  .search-wrapper{
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.search-dialog {
-  width: 80%;
+	height: 100vh;
+	.main{
+		min-height: 200px;
+	}
 }
 
 .search {

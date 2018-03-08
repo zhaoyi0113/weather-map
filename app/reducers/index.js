@@ -12,6 +12,17 @@ const queryWeather = (state, action) => {
         cities.push(action.data);
       }
       return {...state, cities};
+    case actions.SEARCH_FORCAST:
+      const fcities = state.cities;
+			const city = _.find(fcities, e => e.id === action.data.city.id);
+			city.forcast = action.data.list;
+			return {...state, cities: fcities};
+		case actions.DELETE_CITY:
+			const ccities = state.cities;
+			_.remove(ccities, c => c.id === action.id);
+			return {...state, cities: ccities};
+		case actions.CLEAR_CITIES:
+			return {...state, cities: []};
     default:
       return initState;
   }
